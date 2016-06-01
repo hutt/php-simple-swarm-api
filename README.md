@@ -38,7 +38,7 @@ Place the files on your webserver and query `index.php` via GET.
 Just require `functions.php` and use `getData( $args )`.
 
 
-| argument 	 | description 					 |
+| $args 	 | description 					 |
 |----------- |------------------------------ |
 | `user`   	 | returns user data 			 |
 | `checkins` | returns the last 50 checkins. |
