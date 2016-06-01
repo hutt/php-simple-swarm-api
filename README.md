@@ -1,4 +1,4 @@
-# php-swarm-api
+# php-simple-swarm-api
 Tired of OAuth and userless access? You just want to read out your last checkins or settings? This API is for you.
 
 It basically logs you in as a desktop user and gives you access to your Swarm data. You can query user settings or the checkin history just by attaching parameters onto `index.php`.
