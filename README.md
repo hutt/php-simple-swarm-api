@@ -25,7 +25,12 @@ Request: `https://api.example.tld/swarm/index.php?fetch=user`
 Returns: ```{"lists":{"groups":[{"type":"created","count":4,"items":[]}]},"capabilities":{"canHaveFriends":true,"canManageOtherAccounts":false,"canAddTips":true},"location":{"lat":52.000000000000000,"lng":13.000000000000000,"location":"Berlin","countryCode":"DE"},"photo":{"prefix":"https:\/\/irs3.4sqi.net\/img\/user\/","suffix":"\/xxx.jpg"},"contact":{"email":"your_email.tld","twitter":"your_twitter_name"},"hasSwarm":true,"locale":"en","bio":"","firstName":"First Name","relationship":"self","id":"xxxxxxxxx","hasMobileClientConsumer":true,"canonicalPath":"\/your_username","canonicalUrl":"https:\/\/foursquare.com\/your_username","roles":[],"tips":{"count":2},"isAnonymous":false,"isManager":false,"homeCity":"Berlin","settings":{"allowOff4sqAds":false},"gender":"none"}```
 
 ### 2. as a library
-
+Just require `functions.php` and use `getData( $args )`.
+Arguments are 
+| argument | description |
+|--------- |------------ |
+| `user`   | returns user data |
+| `checkins` | returns the last 50 checkins. |
 
 ## Background
 The foursquare api doesn't allow you to fetch your last checkins or your settings without oAuth or in userless mode. So I scripted this workaround.
