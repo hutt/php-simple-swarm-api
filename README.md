@@ -26,11 +26,13 @@ Returns: ```{"lists":{"groups":[{"type":"created","count":4,"items":[]}]},"capab
 
 ### 2. as a library
 Just require `functions.php` and use `getData( $args )`.
-Arguments are 
-| argument | description |
-|--------- |------------ |
-| `user`   | returns user data |
+
+
+| argument 	 | description 					 |
+|----------- |------------------------------ |
+| `user`   	 | returns user data 			 |
 | `checkins` | returns the last 50 checkins. |
+
 
 ## Background
 The foursquare api doesn't allow you to fetch your last checkins or your settings without oAuth or in userless mode. So I scripted this workaround.
