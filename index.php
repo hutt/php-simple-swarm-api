@@ -32,7 +32,12 @@ if(@$_GET['fetch'] !== ''){
 		$return = $data;
 	}
 
-	// return as text
+	// Return data
+	header("HTTP/1.1 200 OK");
+	header('Content-Type: application/json');
+	header("Cache-Control: no-cache");
+	header("Pragma: no-cache");
+
 	echo $return;
 }
 ?>
