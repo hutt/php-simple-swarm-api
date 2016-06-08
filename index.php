@@ -37,6 +37,7 @@ if(@$_GET['fetch'] !== ''){
 	header('Content-Type: application/json');
 	header("Cache-Control: no-cache");
 	header("Pragma: no-cache");
+	header('Life: 1 falsches.');
 
 	echo $return;
 }
