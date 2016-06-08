@@ -17,4 +17,10 @@ define('LOGIN_FORM_URL', 'https://www.swarmapp.com/login');
 //Swarm login action url
 define('LOGIN_ACTION_URL', 'https://www.swarmapp.com/login');
 
+//Cache filename
+define('CACHE_FILE', 'cache.txt');
+
+//timespan swarm shall be cached
+define('CACHE_TIME', 1800);
+
 ?>
