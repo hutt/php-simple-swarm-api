@@ -21,6 +21,6 @@ define('LOGIN_ACTION_URL', 'https://www.swarmapp.com/login');
 define('CACHE_FILE', 'cache.txt');
 
 //timespan swarm shall be cached
-define('TTL', 1800);
+define('TTL', 1800); //1800 = 30min
 
 ?>
