@@ -2,7 +2,7 @@
 require("config.php");
 
 function getData($type = 'checkins'){
-	if(isCached()){ //Cached
+	if( isCached() ){ //Cached
 		$cacheContents = readCache();
 		$return = $cacheContents[1];
 
@@ -10,8 +10,6 @@ function getData($type = 'checkins'){
 		//Initiate cURL.
 		$curl = curl_init();
 
-
-		///////////////////////////////////////////////////////////////
 		// Get the fs-request-signature
 		curl_setopt($curl, CURLOPT_URL, LOGIN_FORM_URL);
 		 
@@ -114,6 +112,7 @@ function getData($type = 'checkins'){
 		
 		//save capturing group content
 		$return = $treffer[1];
+		writeCache($return);
 	}
 
 	//return
@@ -123,13 +122,12 @@ function getData($type = 'checkins'){
 function writeCache($content){
 
 	//prepare file content
+	$preparedContent = array();
 	$preparedContent[0] = time();
 	$preparedContent[1] = $content;
 
 	//Open, write and close file.
-	$file = fopen(CACHE_FILE, "w") or die("Cache file couldn't be created.");
-	fwrite($file, $preparedContent);
-	fclose($file);
+	file_put_contents(CACHE_FILE, json_encode($preparedContent));
 }
 
 function isCached(){
@@ -137,17 +135,16 @@ function isCached(){
 	$now = time();
 	if(($now - $cacheContent[0]) > TTL){
 		//Older than cache TTL seconds
+		
 		return false;
 	}else{
+
 		return true;
 	}
 }
 
 function readCache(){
-	$file = fopen(CACHE_FILE, "r") or die("Cache file couldn't be opened.");
-	$content = fread(CACHE_FILE, filesize(CACHE_FILE));
-	fclose($file);
-
+	$content = json_decode(file_get_contents(CACHE_FILE));
 	return $content;
 }
 
