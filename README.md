@@ -133,10 +133,10 @@ Place the files on your webserver and query `index.php` via GET.
 ```
 
 ### 2. as a library
-Just require `functions.php` and use `getData( $args )`.
+Just require `functions.php` and use `getData( $arg )`.
 
 
-| $args 	 | description 					 |
+| $arg 	 | description 					 |
 |----------- |------------------------------ |
 | `user`   	 | returns user data 			 |
 | `checkins` | returns the last 50 checkins. |
