@@ -35,8 +35,7 @@ if(@$_GET['fetch'] !== ''){
 	// Return data
 	header("HTTP/1.1 200 OK");
 	header("Content-Type: application/json");
-	header("Cache-Control: no-cache");
-	header("Pragma: no-cache");
+	header("Cache-Control: max-age=300, public");
 	
 	$allowed_domains = array("https://your-domain.tld", "https://yourotherdomain.tld");
 	if (in_array($_SERVER['HTTP_ORIGIN'], $allowed_domains)) {
