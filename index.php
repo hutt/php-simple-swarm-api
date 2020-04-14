@@ -34,10 +34,17 @@ if(@$_GET['fetch'] !== ''){
 
 	// Return data
 	header("HTTP/1.1 200 OK");
-	header('Content-Type: application/json');
+	header("Content-Type: application/json");
 	header("Cache-Control: no-cache");
 	header("Pragma: no-cache");
-	header('Life: 1 falsches.');
+	
+	$allowed_domains = array("https://your-domain.tld", "https://yourotherdomain.tld");
+	if (in_array($_SERVER['HTTP_ORIGIN'], $allowed_domains)) {
+		header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+		header("Access-Control-Allow-Methods: GET");
+	}
+
+	header("Life: 1 falsches.");
 
 	echo $return;
 }
